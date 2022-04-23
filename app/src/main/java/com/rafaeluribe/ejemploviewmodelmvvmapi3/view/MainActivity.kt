@@ -6,17 +6,22 @@ import android.view.View
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import com.rafaeluribe.ejemploviewmodelmvvmapi3.databinding.ActivityMainBinding
 import com.rafaeluribe.ejemploviewmodelmvvmapi3.repository.recyclerview.NoticiasAdaptador
-import com.rafaeluribe.ejemploviewmodelmvvmapi3.repository.recyclerview.NoticiasTag
 import com.rafaeluribe.ejemploviewmodelmvvmapi3.viewmodel.MainViewModel
 
 class MainActivity : AppCompatActivity() {
 
+    //ViewBinding
     private lateinit var b : ActivityMainBinding
 
+    //ViewModel
     private lateinit var mainViewModel: MainViewModel
 
+    //RecyclerView
+    private lateinit var myRecyclerView: RecyclerView
+    private lateinit var adaptador: NoticiasAdaptador
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -24,9 +29,14 @@ class MainActivity : AppCompatActivity() {
         b = ActivityMainBinding.inflate(layoutInflater)
         setContentView(b.root)
 
-
+        //ViewModel
         mainViewModel = ViewModelProvider(this).get(MainViewModel::class.java)
         observar()
+
+        //recycler
+        myRecyclerView = b.myRecycler
+        myRecyclerView.layoutManager =
+            LinearLayoutManager(applicationContext, LinearLayoutManager.VERTICAL, false)
 
         b.btnTraerNoticias.setOnClickListener {
             b.progressBar.visibility = View.VISIBLE
@@ -37,19 +47,9 @@ class MainActivity : AppCompatActivity() {
     private fun observar() {
         mainViewModel.noticias.observe(this, Observer {
 
-            b.myRecycler.layoutManager =
-                LinearLayoutManager(applicationContext, LinearLayoutManager.VERTICAL, false)
+            adaptador = NoticiasAdaptador(applicationContext, it.articles)
+            myRecyclerView.adapter = adaptador
 
-            var listRecycler: ArrayList<NoticiasTag> = ArrayList()
-
-            for ((i) in it.articles.withIndex()){
-                listRecycler.add(NoticiasTag(it.articles[i].title,
-                                 it.articles[i].description, it.articles[i].urlToImage))
-            }
-
-            var adaptador = NoticiasAdaptador(applicationContext, listRecycler)
-            b.myRecycler.adapter = adaptador
-            b.progressBar.visibility = View.GONE
         })
     }
 }

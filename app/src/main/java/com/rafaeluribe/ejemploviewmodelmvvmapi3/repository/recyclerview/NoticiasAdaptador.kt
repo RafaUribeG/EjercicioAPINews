@@ -9,9 +9,9 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.rafaeluribe.ejemploviewmodelmvvmapi3.R
-import com.rafaeluribe.ejemploviewmodelmvvmapi3.repository.retrofit.Noticias
+import com.rafaeluribe.ejemploviewmodelmvvmapi3.repository.retrofit.Article
 
-class NoticiasAdaptador(var context: Context, var listaDatos: ArrayList<NoticiasTag>) :
+class NoticiasAdaptador(var context: Context, var listaDatos: List<Article>) :
     RecyclerView.Adapter<NoticiasAdaptador.ViewHolderDatos>()  {
 
 
@@ -36,11 +36,11 @@ class NoticiasAdaptador(var context: Context, var listaDatos: ArrayList<Noticias
 
     override fun onBindViewHolder(holder: ViewHolderDatos, position: Int) {
 
-        holder.titulo.text = listaDatos[position].titulo
-        holder.descripcion.text = listaDatos[position].descripcion
+        holder.titulo.text = listaDatos[position].title
+        holder.descripcion.text = listaDatos[position].description
 
         Glide.with(context)
-             .load(listaDatos[position].image)
+             .load(listaDatos[position].urlToImage)
              .override(400, 400)
              .into(holder.imagen)
     }
