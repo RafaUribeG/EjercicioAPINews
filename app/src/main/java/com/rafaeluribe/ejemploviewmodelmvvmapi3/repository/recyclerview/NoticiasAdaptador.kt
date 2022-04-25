@@ -4,6 +4,7 @@ import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.view.animation.AnimationUtils
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
@@ -35,7 +36,8 @@ class NoticiasAdaptador(var context: Context, var listaDatos: List<Article>) :
     }
 
     override fun onBindViewHolder(holder: ViewHolderDatos, position: Int) {
-
+        holder.itemView.animation =
+            AnimationUtils.loadAnimation(context, R.anim.fade_transition)
         holder.titulo.text = listaDatos[position].title
         holder.descripcion.text = listaDatos[position].description
 
