@@ -12,27 +12,31 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.EjemploViewModelMVVMAPI3"
         android:usesCleartextTraffic="true">
+
         <activity
-            android:name=".view.VistaDetalleNoticias"
+            android:name=".view.activities.VistaDetalleNoticias"
             android:exported="false" />
         <activity
-            android:name=".view.Registro"
+            android:name=".view.activities.Registro"
+            android:exported="false"
+            android:parentActivityName=".view.activities.Login"/>
+        <activity
+            android:name=".view.activities.MainActivity"
             android:exported="false" />
         <activity
-            android:name=".view.Login"
-            android:exported="false" />
-        <activity
-            android:name=".view.TotalNews"
-            android:exported="false" />
-        <activity
-            android:name=".view.MainActivity"
+            android:name=".view.activities.Login"
             android:exported="true">
+
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <meta-data
+            android:name="preloaded_fonts"
+            android:resource="@array/preloaded_fonts" />
     </application>
 
 </manifest>

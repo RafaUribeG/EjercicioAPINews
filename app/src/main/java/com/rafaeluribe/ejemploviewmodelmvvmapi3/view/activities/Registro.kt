@@ -1,4 +1,4 @@
-package com.rafaeluribe.ejemploviewmodelmvvmapi3.view
+package com.rafaeluribe.ejemploviewmodelmvvmapi3.view.activities
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -13,5 +13,8 @@ class Registro : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityRegistroBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
+        supportActionBar!!.setDisplayHomeAsUpEnabled(true)
+        supportActionBar!!.title = "Registro de Usuarios"
     }
 }

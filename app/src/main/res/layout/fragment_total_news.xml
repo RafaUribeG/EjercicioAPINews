@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="">
+    tools:context=".view.fragmentos.Fragmento_TotalNews">
 
     <TextView
         android:id="@+id/textView"
@@ -58,7 +58,5 @@
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/myScroll"/>
-
-
 
 </androidx.constraintlayout.widget.ConstraintLayout>

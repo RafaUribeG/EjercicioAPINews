@@ -1,21 +1,26 @@
-package com.rafaeluribe.ejemploviewmodelmvvmapi3.view
+package com.rafaeluribe.ejemploviewmodelmvvmapi3.view.fragmentos
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.fragment.app.Fragment
+import android.view.LayoutInflater
 import android.view.View
+import android.view.ViewGroup
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.rafaeluribe.ejemploviewmodelmvvmapi3.databinding.ActivityMainBinding
+import com.rafaeluribe.ejemploviewmodelmvvmapi3.R
+import com.rafaeluribe.ejemploviewmodelmvvmapi3.databinding.FragmentTotalNewsBinding
 import com.rafaeluribe.ejemploviewmodelmvvmapi3.repository.recyclerview.NoticiasAdaptador
 import com.rafaeluribe.ejemploviewmodelmvvmapi3.viewmodel.MainViewModel
 
-class MainActivity : AppCompatActivity() {
+
+class Fragmento_TotalNews : Fragment() {
 
     //ViewBinding
-    private lateinit var b : ActivityMainBinding
+    private lateinit var b : FragmentTotalNewsBinding
 
+    //ViewModel
     //ViewModel
     private lateinit var mainViewModel: MainViewModel
 
@@ -24,10 +29,12 @@ class MainActivity : AppCompatActivity() {
     private lateinit var adaptador: NoticiasAdaptador
 
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        b = ActivityMainBinding.inflate(layoutInflater)
-        setContentView(b.root)
+    override fun onCreateView(
+        inflater: LayoutInflater, container: ViewGroup?,
+        savedInstanceState: Bundle?
+    ): View? {
+
+        return inflater.inflate(R.layout.fragment_total_news, container, false)
 
         //ViewModel
         mainViewModel = ViewModelProvider(this).get(MainViewModel::class.java)
@@ -36,7 +43,7 @@ class MainActivity : AppCompatActivity() {
         //recycler
         myRecyclerView = b.myRecycler
         myRecyclerView.layoutManager =
-            LinearLayoutManager(applicationContext, LinearLayoutManager.VERTICAL, false)
+            LinearLayoutManager(context, LinearLayoutManager.VERTICAL, false)
 
         b.btnTraerNoticias.setOnClickListener {
             b.progressBar.visibility = View.VISIBLE
@@ -44,12 +51,13 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-    private fun observar() {
-        mainViewModel.noticias.observe(this, Observer {
+        private fun observar() {
+            mainViewModel.noticias.observe(viewLifecycleOwner, Observer {
 
-            adaptador = NoticiasAdaptador(applicationContext, it.articles)
-            myRecyclerView.adapter = adaptador
+                adaptador = NoticiasAdaptador(requireContext(), it.articles)
+                myRecyclerView.adapter = adaptador
 
-        })
-    }
+            })
+        }
+
 }

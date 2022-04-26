@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/background"
-    tools:context=".view.activities.Login">
+    tools:context=".view.actividades.Login">
 
 
     <com.google.android.material.textfield.TextInputLayout
@@ -23,7 +23,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        >
+        app:startIconDrawable="@drawable/ic_person">
 
         <EditText
             android:id="@+id/txtUser"
@@ -48,7 +48,7 @@
         app:layout_constraintHorizontal_bias="0.489"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textInputLayout"
-       >
+        app:startIconDrawable="@drawable/ic_baseline_info_24">
 
         <EditText
             android:id="@+id/txtPass"
@@ -64,6 +64,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="32dp"
         android:backgroundTint="#00BCD4"
+        android:onClick="solicitarValidacion"
         android:text="Login"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.848"
@@ -88,6 +89,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="12dp"
         android:backgroundTint="#00BCD4"
+        android:onClick="abrirRegistro"
         android:text="Registro"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.845"
