@@ -1,4 +1,4 @@
-package com.rafaeluribe.ejemploviewmodelmvvmapi3.repository.retrofit
+package com.rafaeluribe.ejemploviewmodelmvvmapi3.repository.retrofit.noticias
 
 import retrofit2.Call
 import retrofit2.http.GET

@@ -1,4 +1,4 @@
-package com.rafaeluribe.ejemploviewmodelmvvmapi3.repository.retrofit
+package com.rafaeluribe.ejemploviewmodelmvvmapi3.repository.retrofit.noticias
 
 data class Noticias(
     val articles: List<Article>,

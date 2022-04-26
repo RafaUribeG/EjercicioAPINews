@@ -10,7 +10,7 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.rafaeluribe.ejemploviewmodelmvvmapi3.R
-import com.rafaeluribe.ejemploviewmodelmvvmapi3.repository.retrofit.Article
+import com.rafaeluribe.ejemploviewmodelmvvmapi3.repository.retrofit.noticias.Article
 
 class NoticiasAdaptador(var context: Context, var listaDatos: List<Article>) :
     RecyclerView.Adapter<NoticiasAdaptador.ViewHolderDatos>()  {

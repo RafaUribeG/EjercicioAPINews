@@ -15,7 +15,7 @@ import com.rafaeluribe.ejemploviewmodelmvvmapi3.repository.recyclerview.Noticias
 import com.rafaeluribe.ejemploviewmodelmvvmapi3.viewmodel.MainViewModel
 
 
-class Fragmento_TotalNews : Fragment() {
+class FragmentoTotalNews : Fragment() {
 
     //ViewBinding
     private lateinit var b : FragmentTotalNewsBinding
@@ -34,7 +34,7 @@ class Fragmento_TotalNews : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
 
-        return inflater.inflate(R.layout.fragment_total_news, container, false)
+        b = FragmentTotalNewsBinding.inflate(layoutInflater)
 
         //ViewModel
         mainViewModel = ViewModelProvider(this).get(MainViewModel::class.java)
@@ -49,6 +49,10 @@ class Fragmento_TotalNews : Fragment() {
             b.progressBar.visibility = View.VISIBLE
             mainViewModel.onBtnTraerNoticias()
         }
+
+        return b.root
+
+
     }
 
         private fun observar() {

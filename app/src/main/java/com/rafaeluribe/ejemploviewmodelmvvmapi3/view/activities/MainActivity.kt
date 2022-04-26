@@ -10,7 +10,7 @@ import androidx.appcompat.widget.Toolbar
 import com.google.android.material.navigation.NavigationView
 import com.rafaeluribe.ejemploviewmodelmvvmapi3.R
 import com.rafaeluribe.ejemploviewmodelmvvmapi3.databinding.ActivityMainBinding
-import com.rafaeluribe.ejemploviewmodelmvvmapi3.view.fragmentos.Fragmento_TotalNews
+import com.rafaeluribe.ejemploviewmodelmvvmapi3.view.fragmentos.FragmentoTotalNews
 
 class MainActivity : AppCompatActivity() , NavigationView.OnNavigationItemSelectedListener {
 
@@ -78,9 +78,9 @@ class MainActivity : AppCompatActivity() , NavigationView.OnNavigationItemSelect
 
         when (item.itemId) {
 
-            R.id.nav_buscar-> ft.replace(R.id.myFrame, Fragmento_TotalNews()).commit()
-            R.id.nav_notiger -> ft.replace(R.id.myFrame, Fragmento_TotalNews()).commit()
-            R.id.nav_categorias -> ft.replace(R.id.myFrame, Fragmento_TotalNews()).commit()
+            R.id.nav_buscar-> ft.replace(R.id.myFrame, FragmentoTotalNews()).commit()
+            R.id.nav_notiger -> ft.replace(R.id.myFrame, FragmentoTotalNews()).commit()
+            R.id.nav_categorias -> ft.replace(R.id.myFrame, FragmentoTotalNews()).commit()
             R.id.nav_exit -> {
                 val intent = Intent(this, Login::class.java)
                 startActivity(intent)

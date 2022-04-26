@@ -3,7 +3,7 @@ package com.rafaeluribe.ejemploviewmodelmvvmapi3.viewmodel
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.rafaeluribe.ejemploviewmodelmvvmapi3.repository.interactor.NoticiasInteractor
-import com.rafaeluribe.ejemploviewmodelmvvmapi3.repository.retrofit.Noticias
+import com.rafaeluribe.ejemploviewmodelmvvmapi3.repository.retrofit.noticias.Noticias
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch

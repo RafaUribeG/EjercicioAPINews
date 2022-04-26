@@ -1,4 +1,4 @@
-package com.rafaeluribe.ejemploviewmodelmvvmapi3.repository.retrofit
+package com.rafaeluribe.ejemploviewmodelmvvmapi3.repository.retrofit.noticias
 
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
