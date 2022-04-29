@@ -61,7 +61,7 @@ class FragmentoTotalNews : Fragment(), SearchView.OnQueryTextListener{
         private fun observar() {
             fragTotalNewsViewModel.noticias.observe(viewLifecycleOwner, Observer {
                 b.progressBar.visibility = View.GONE
-                adaptador = NoticiasAdaptador(requireContext(), it.articles, VistaDetalleNoticias())
+                adaptador = NoticiasAdaptador(requireContext().applicationContext, it.articles)
                 myRecyclerView.adapter = adaptador
             })
         }

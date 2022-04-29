@@ -37,7 +37,7 @@
         android:layout_marginTop="140dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@id/btnTraerNoticias" />
+        app:layout_constraintTop_toTopOf="@id/btnTraerNoticias"/>
 
     <ScrollView
         android:id="@+id/myScroll"

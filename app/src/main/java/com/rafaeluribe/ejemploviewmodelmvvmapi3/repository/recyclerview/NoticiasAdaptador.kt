@@ -16,8 +16,7 @@ import com.rafaeluribe.ejemploviewmodelmvvmapi3.repository.retrofit.noticias.Art
 import com.rafaeluribe.ejemploviewmodelmvvmapi3.view.activities.VistaDetalleNoticias
 
 class NoticiasAdaptador(var context: Context,
-                        var listaDatos: List<Article>,
-                        var activity : VistaDetalleNoticias) :
+                        var listaDatos: List<Article>) :
     RecyclerView.Adapter<NoticiasAdaptador.ViewHolderDatos>()  {
 
 
@@ -54,10 +53,10 @@ class NoticiasAdaptador(var context: Context,
 
         holder.itemView.setOnClickListener {
             var detail = Gson().toJson(listaDatos[holder.layoutPosition])
-
-            var intent = Intent(activity, VistaDetalleNoticias::class.java)
+            var intent = Intent(context, VistaDetalleNoticias::class.java)
+            intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK
             intent.putExtra("articles", detail)
-            activity.startActivity(intent)
+            context.startActivity(intent)
         }
     }
 
