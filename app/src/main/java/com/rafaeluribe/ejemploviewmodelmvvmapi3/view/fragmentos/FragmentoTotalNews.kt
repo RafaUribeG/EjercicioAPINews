@@ -5,6 +5,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.SearchView
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -12,21 +13,25 @@ import androidx.recyclerview.widget.RecyclerView
 import com.rafaeluribe.ejemploviewmodelmvvmapi3.R
 import com.rafaeluribe.ejemploviewmodelmvvmapi3.databinding.FragmentTotalNewsBinding
 import com.rafaeluribe.ejemploviewmodelmvvmapi3.repository.recyclerview.NoticiasAdaptador
+import com.rafaeluribe.ejemploviewmodelmvvmapi3.view.activities.VistaDetalleNoticias
+import com.rafaeluribe.ejemploviewmodelmvvmapi3.viewmodel.FragTotalNewsViewModel
 import com.rafaeluribe.ejemploviewmodelmvvmapi3.viewmodel.MainViewModel
 
 
-class FragmentoTotalNews : Fragment() {
+class FragmentoTotalNews : Fragment(), SearchView.OnQueryTextListener{
 
     //ViewBinding
     private lateinit var b : FragmentTotalNewsBinding
 
     //ViewModel
-    //ViewModel
-    private lateinit var mainViewModel: MainViewModel
+    private lateinit var fragTotalNewsViewModel: FragTotalNewsViewModel
 
     //RecyclerView
     private lateinit var myRecyclerView: RecyclerView
     private lateinit var adaptador: NoticiasAdaptador
+
+    //SearchView
+    private lateinit var searchView :SearchView
 
 
     override fun onCreateView(
@@ -37,7 +42,7 @@ class FragmentoTotalNews : Fragment() {
         b = FragmentTotalNewsBinding.inflate(layoutInflater)
 
         //ViewModel
-        mainViewModel = ViewModelProvider(this).get(MainViewModel::class.java)
+        fragTotalNewsViewModel = ViewModelProvider(this).get(FragTotalNewsViewModel::class.java)
         observar()
 
         //recycler
@@ -47,21 +52,27 @@ class FragmentoTotalNews : Fragment() {
 
         b.btnTraerNoticias.setOnClickListener {
             b.progressBar.visibility = View.VISIBLE
-            mainViewModel.onBtnTraerNoticias()
+            fragTotalNewsViewModel.onBtnTraerNoticias()
         }
 
         return b.root
-
-
     }
 
         private fun observar() {
-            mainViewModel.noticias.observe(viewLifecycleOwner, Observer {
-
-                adaptador = NoticiasAdaptador(requireContext(), it.articles)
+            fragTotalNewsViewModel.noticias.observe(viewLifecycleOwner, Observer {
+                b.progressBar.visibility = View.GONE
+                adaptador = NoticiasAdaptador(requireContext(), it.articles, VistaDetalleNoticias())
                 myRecyclerView.adapter = adaptador
-
             })
         }
+
+    override fun onQueryTextSubmit(p0: String?): Boolean {
+        TODO("Not yet implemented")
+    }
+
+    override fun onQueryTextChange(p0: String?): Boolean {
+        TODO("Not yet implemented")
+    }
+
 
 }

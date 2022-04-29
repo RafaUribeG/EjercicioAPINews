@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">EjemploViewModelMVVMAPI3</string>
+    <string name="app_name">Portal de Noticias</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="drawer_open">drawer_open</string>

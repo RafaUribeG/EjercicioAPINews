@@ -7,12 +7,14 @@ import android.view.MenuItem
 import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
+import com.airbnb.lottie.Lottie
 import com.google.android.material.navigation.NavigationView
 import com.rafaeluribe.ejemploviewmodelmvvmapi3.R
 import com.rafaeluribe.ejemploviewmodelmvvmapi3.databinding.ActivityMainBinding
 import com.rafaeluribe.ejemploviewmodelmvvmapi3.view.fragmentos.FragmentoTotalNews
 
 class MainActivity : AppCompatActivity() , NavigationView.OnNavigationItemSelectedListener {
+
 
     //ViewBinding
     private lateinit var b : ActivityMainBinding
@@ -28,6 +30,7 @@ class MainActivity : AppCompatActivity() , NavigationView.OnNavigationItemSelect
         super.onCreate(savedInstanceState)
         b = ActivityMainBinding.inflate(layoutInflater)
         setContentView(b.root)
+
 
         //
         b.myNavigationView.setNavigationItemSelectedListener(this)

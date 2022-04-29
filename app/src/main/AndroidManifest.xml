@@ -19,14 +19,18 @@
         <activity
             android:name=".view.activities.Registro"
             android:exported="false"
-            android:parentActivityName=".view.activities.Login"/>
+            android:parentActivityName=".view.activities.Login" />
         <activity
             android:name=".view.activities.MainActivity"
             android:exported="false" />
+
         <activity
             android:name=".view.activities.Login"
-            android:exported="true">
+            android:exported="false"/>
 
+        <activity
+            android:name=".view.activities.SplashScreen"
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

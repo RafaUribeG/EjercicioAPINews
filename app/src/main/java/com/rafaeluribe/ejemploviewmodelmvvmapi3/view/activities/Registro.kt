@@ -74,7 +74,7 @@ class Registro : AppCompatActivity() {
                 }
             }
             else{
-                Toast.makeText(applicationContext, "Usuario ya existe",
+                Toast.makeText(applicationContext, "Usuario ${usuarioItem.usuario} ya existe",
                     Toast.LENGTH_SHORT).show()
             }
         }

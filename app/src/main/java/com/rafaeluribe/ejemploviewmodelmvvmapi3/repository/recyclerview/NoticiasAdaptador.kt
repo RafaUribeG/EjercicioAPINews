@@ -1,6 +1,7 @@
 package com.rafaeluribe.ejemploviewmodelmvvmapi3.repository.recyclerview
 
 import android.content.Context
+import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -9,10 +10,14 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
+import com.google.gson.Gson
 import com.rafaeluribe.ejemploviewmodelmvvmapi3.R
 import com.rafaeluribe.ejemploviewmodelmvvmapi3.repository.retrofit.noticias.Article
+import com.rafaeluribe.ejemploviewmodelmvvmapi3.view.activities.VistaDetalleNoticias
 
-class NoticiasAdaptador(var context: Context, var listaDatos: List<Article>) :
+class NoticiasAdaptador(var context: Context,
+                        var listaDatos: List<Article>,
+                        var activity : VistaDetalleNoticias) :
     RecyclerView.Adapter<NoticiasAdaptador.ViewHolderDatos>()  {
 
 
@@ -43,8 +48,17 @@ class NoticiasAdaptador(var context: Context, var listaDatos: List<Article>) :
 
         Glide.with(context)
              .load(listaDatos[position].urlToImage)
+             .error(R.drawable.noimage)
              .override(400, 400)
              .into(holder.imagen)
+
+        holder.itemView.setOnClickListener {
+            var detail = Gson().toJson(listaDatos[holder.layoutPosition])
+
+            var intent = Intent(activity, VistaDetalleNoticias::class.java)
+            intent.putExtra("articles", detail)
+            activity.startActivity(intent)
+        }
     }
 
     override fun getItemCount(): Int {
