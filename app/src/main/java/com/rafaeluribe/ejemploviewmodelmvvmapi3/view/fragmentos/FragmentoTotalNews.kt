@@ -50,10 +50,9 @@ class FragmentoTotalNews : Fragment(), SearchView.OnQueryTextListener{
         myRecyclerView.layoutManager =
             LinearLayoutManager(context, LinearLayoutManager.VERTICAL, false)
 
-        b.btnTraerNoticias.setOnClickListener {
-            b.progressBar.visibility = View.VISIBLE
-            fragTotalNewsViewModel.onBtnTraerNoticias()
-        }
+        b.progressBar.visibility = View.VISIBLE
+        fragTotalNewsViewModel.onBtnTraerNoticias()
+
 
         return b.root
     }
@@ -61,7 +60,7 @@ class FragmentoTotalNews : Fragment(), SearchView.OnQueryTextListener{
         private fun observar() {
             fragTotalNewsViewModel.noticias.observe(viewLifecycleOwner, Observer {
                 b.progressBar.visibility = View.GONE
-                adaptador = NoticiasAdaptador(requireContext().applicationContext, it.articles)
+                adaptador = NoticiasAdaptador(requireContext().applicationContext, it.data)
                 myRecyclerView.adapter = adaptador
             })
         }

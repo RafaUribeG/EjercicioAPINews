@@ -16,9 +16,8 @@ class RegistroViewModel : ViewModel() {
 
      fun onBtnValidarUsuarioRegistro(usuario: String){
         CoroutineScope(Dispatchers.IO).launch {
-            var x: Usuario? = registroInteractor.validarUsuario(usuario)
 
-            var i : Int = registroInteractor.cantidadRegistros()
+            var x: Usuario? = registroInteractor.validarUsuario(usuario)
 
 
         }

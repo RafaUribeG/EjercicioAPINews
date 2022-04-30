@@ -30,8 +30,8 @@
 
                 <ImageView
                     android:id="@+id/im_item"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
                     android:layout_weight="1"
                     android:layout_marginStart="2dp"
                     android:layout_marginLeft="2dp"

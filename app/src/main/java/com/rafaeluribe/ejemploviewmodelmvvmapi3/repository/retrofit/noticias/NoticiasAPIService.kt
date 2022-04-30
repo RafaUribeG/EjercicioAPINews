@@ -7,7 +7,7 @@ import retrofit2.http.Query
 
 interface NoticiasAPIService {
 
-
+        /*
         @Headers(
                 value = [
                         "X-Api-Key: 4e74eb29eccf474eb57647823ecccba8",
@@ -17,9 +17,11 @@ interface NoticiasAPIService {
         @GET("everything?q=chile")
         fun obtenerNoticias(@Query("language") language: String): Call<Noticias>
 
-        /*
-        @GET("news?access_key=50e5ea75c7004e9a26afcf256d1dc590&countries=cl")
-        fun buscarKeyword(@Query("keywords") keyword: String): Call<Noticias>
-
          */
+
+
+        @GET("news?access_key=50e5ea75c7004e9a26afcf256d1dc590")
+        fun obtenerNoticias(@Query("languages") language: String): Call<Noticias>
+
+
 }

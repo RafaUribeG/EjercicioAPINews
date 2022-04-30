@@ -2,6 +2,7 @@ package com.rafaeluribe.ejemploviewmodelmvvmapi3.repository.recyclerview
 
 import android.content.Context
 import android.content.Intent
+import android.text.Html
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -12,11 +13,11 @@ import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.google.gson.Gson
 import com.rafaeluribe.ejemploviewmodelmvvmapi3.R
-import com.rafaeluribe.ejemploviewmodelmvvmapi3.repository.retrofit.noticias.Article
+import com.rafaeluribe.ejemploviewmodelmvvmapi3.repository.retrofit.noticias.Data
 import com.rafaeluribe.ejemploviewmodelmvvmapi3.view.activities.VistaDetalleNoticias
 
 class NoticiasAdaptador(var context: Context,
-                        var listaDatos: List<Article>) :
+                        var listaDatos: List<Data>) :
     RecyclerView.Adapter<NoticiasAdaptador.ViewHolderDatos>()  {
 
 
@@ -42,20 +43,20 @@ class NoticiasAdaptador(var context: Context,
     override fun onBindViewHolder(holder: ViewHolderDatos, position: Int) {
         holder.itemView.animation =
             AnimationUtils.loadAnimation(context, R.anim.fade_transition)
-        holder.titulo.text = listaDatos[position].title
-        holder.descripcion.text = listaDatos[position].description
+        holder.titulo.text = Html.fromHtml(listaDatos[position].title)
+        holder.descripcion.text = Html.fromHtml(listaDatos[position].description)
 
         Glide.with(context)
-             .load(listaDatos[position].urlToImage)
+             .load(listaDatos[position].url)
              .error(R.drawable.noimage)
-             .override(400, 400)
+             .override(200, 200)
              .into(holder.imagen)
 
         holder.itemView.setOnClickListener {
             var detail = Gson().toJson(listaDatos[holder.layoutPosition])
             var intent = Intent(context, VistaDetalleNoticias::class.java)
             intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK
-            intent.putExtra("articles", detail)
+            intent.putExtra("data", detail)
             context.startActivity(intent)
         }
     }

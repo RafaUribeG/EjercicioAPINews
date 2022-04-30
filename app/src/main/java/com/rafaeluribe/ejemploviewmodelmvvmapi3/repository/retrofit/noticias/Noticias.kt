@@ -1,23 +1,26 @@
 package com.rafaeluribe.ejemploviewmodelmvvmapi3.repository.retrofit.noticias
 
 data class Noticias(
-    val articles: List<Article>,
-    val status: String,
-    val totalResults: Int
+    val data: List<Data>,
+    val pagination: Pagination
 )
 
-data class Article(
+data class Data(
     val author: String,
-    val content: String,
+    val category: String,
+    val country: String,
     val description: String,
-    val publishedAt: String,
-    val source: Source,
+    val image: String,
+    val language: String,
+    val published_at: String,
+    val source: String,
     val title: String,
-    val url: String,
-    val urlToImage: String
+    val url: String
 )
 
-data class Source(
-    val id: Any,
-    val name: String
+data class Pagination(
+    val count: Int,
+    val limit: Int,
+    val offset: Int,
+    val total: Int
 )
