@@ -11,10 +11,11 @@
             android:layout_width="match_parent"
             android:layout_height="1dp"/>
 
-        <androidx.cardview.widget.CardView
+        <com.google.android.material.card.MaterialCardView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="5dp"
+            style="?attr/materialCardViewElevatedStyle"
             android:orientation="horizontal"
             android:layout_margin="10dp"
             app:cardCornerRadius="20dp"
@@ -66,5 +67,5 @@
                             android:textSize="7sp"/>
                     </LinearLayout>
                 </LinearLayout>
-            </androidx.cardview.widget.CardView>
+            </com.google.android.material.card.MaterialCardView>
 </LinearLayout>

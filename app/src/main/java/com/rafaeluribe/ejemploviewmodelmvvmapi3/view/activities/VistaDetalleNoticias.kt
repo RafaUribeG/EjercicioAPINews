@@ -29,7 +29,7 @@ class VistaDetalleNoticias : AppCompatActivity() {
             intent.action = Intent.ACTION_SEND
             intent.putExtra(Intent.EXTRA_TEXT, "Dale un vistazo a esta noticia " + news.url)
             intent.type = "text/plain"
-            startActivity(Intent.createChooser(intent, "Compartir a: "))
+            startActivity(Intent.createChooser(intent, "Compartir por: "))
         }
     }
 }

@@ -23,14 +23,13 @@ class RegistroInteractor {
         return null
     }
 
-    fun agregarUsuario(x : Int, usuarioItem: UsuarioItem) : UsuarioItem? {
+    fun agregarUsuario(x : Int, usuarioItem: UsuarioItem) {
 
             val llamada : UsuarioAPIService =
                 RestEngine.getRestEngine().create(UsuarioAPIService::class.java)
             val resultado : Call<UsuarioItem> = llamada.agregarUsuario(x,usuarioItem)
             val u: UsuarioItem? = resultado.execute().body()
 
-            return u
     }
 
      fun cantidadRegistros(): Int {
