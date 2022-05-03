@@ -1,26 +1,17 @@
 package com.rafaeluribe.ejemploviewmodelmvvmapi3.view.activities
 
-import android.content.Context
 import android.content.Intent
-import android.content.SharedPreferences
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import android.widget.Toast
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
-import androidx.lifecycle.get
-import com.rafaeluribe.ejemploviewmodelmvvmapi3.R
 import com.rafaeluribe.ejemploviewmodelmvvmapi3.databinding.ActivityLoginBinding
-import com.rafaeluribe.ejemploviewmodelmvvmapi3.repository.retrofit.usuarios.RestEngine
-import com.rafaeluribe.ejemploviewmodelmvvmapi3.repository.retrofit.usuarios.Usuario
-import com.rafaeluribe.ejemploviewmodelmvvmapi3.repository.retrofit.usuarios.UsuarioAPIService
-import com.rafaeluribe.ejemploviewmodelmvvmapi3.viewmodel.FragTotalNewsViewModel
-import com.rafaeluribe.ejemploviewmodelmvvmapi3.viewmodel.LoginViewModel
+import com.rafaeluribe.ejemploviewmodelmvvmapi3.viewmodel.activities.LoginViewModel
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
-import retrofit2.Call
 
 
 class Login : AppCompatActivity() {
@@ -63,6 +54,7 @@ class Login : AppCompatActivity() {
             if (loginViewModel.usuarios != null){
                 val intent = Intent(applicationContext, MainActivity::class.java)
                 startActivity(intent)
+                Toast.makeText(applicationContext, "Bienvenido!!" , Toast.LENGTH_SHORT).show()
             }
             else{
                 Toast.makeText(applicationContext, "Usuario no registrado", Toast.LENGTH_SHORT).show()

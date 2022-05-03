@@ -1,4 +1,4 @@
-package com.rafaeluribe.ejemploviewmodelmvvmapi3.viewmodel
+package com.rafaeluribe.ejemploviewmodelmvvmapi3.viewmodel.activities
 
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel

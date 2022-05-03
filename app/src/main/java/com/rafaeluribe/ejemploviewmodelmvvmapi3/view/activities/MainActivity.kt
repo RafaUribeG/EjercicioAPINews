@@ -7,11 +7,10 @@ import android.view.MenuItem
 import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
-import com.airbnb.lottie.Lottie
 import com.google.android.material.navigation.NavigationView
 import com.rafaeluribe.ejemploviewmodelmvvmapi3.R
 import com.rafaeluribe.ejemploviewmodelmvvmapi3.databinding.ActivityMainBinding
-import com.rafaeluribe.ejemploviewmodelmvvmapi3.view.fragmentos.FragmentoTotalNews
+import com.rafaeluribe.ejemploviewmodelmvvmapi3.view.fragments.*
 
 class MainActivity : AppCompatActivity() , NavigationView.OnNavigationItemSelectedListener {
 
@@ -38,9 +37,13 @@ class MainActivity : AppCompatActivity() , NavigationView.OnNavigationItemSelect
         //Toolbar
         myToolbar = findViewById(R.id.myToolbar)
 
+        //Set Home
+        supportFragmentManager.beginTransaction().add(R.id.myFrame, FragmentoTotalNews()).commit()
+
         setSupportActionBar(myToolbar)
 
         toogle = setDrawerToogle()
+        b.myDrawerLayout.addDrawerListener(toogle)
 
     }
 
@@ -81,9 +84,13 @@ class MainActivity : AppCompatActivity() , NavigationView.OnNavigationItemSelect
 
         when (item.itemId) {
 
-            R.id.nav_buscar-> ft.replace(R.id.myFrame, FragmentoTotalNews()).commit()
             R.id.nav_notiger -> ft.replace(R.id.myFrame, FragmentoTotalNews()).commit()
-            R.id.nav_categorias -> ft.replace(R.id.myFrame, FragmentoTotalNews()).commit()
+            R.id.navDeportes-> ft.replace(R.id.myFrame, FragSports()).commit()
+            R.id.navCiencias -> ft.replace(R.id.myFrame, FragScience()).commit()
+            R.id.navNegocios -> ft.replace(R.id.myFrame, FragBusiness()).commit()
+            R.id.navTecnologia -> ft.replace(R.id.myFrame, FragTec()).commit()
+            R.id.navSalud -> ft.replace(R.id.myFrame, FragHealth()).commit()
+            R.id.navEntretenimiento -> ft.replace(R.id.myFrame, FragEntertainment()).commit()
             R.id.nav_exit -> {
                 val intent = Intent(this, Login::class.java)
                 startActivity(intent)

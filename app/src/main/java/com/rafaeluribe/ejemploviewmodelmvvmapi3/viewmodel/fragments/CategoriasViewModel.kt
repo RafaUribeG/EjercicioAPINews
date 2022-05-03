@@ -1,4 +1,4 @@
-package com.rafaeluribe.ejemploviewmodelmvvmapi3.viewmodel
+package com.rafaeluribe.ejemploviewmodelmvvmapi3.viewmodel.fragments
 
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
@@ -8,23 +8,14 @@ import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 
-class MainViewModel : ViewModel() {
+class CategoriasViewModel : ViewModel() {
 
-    val noticias: MutableLiveData<Noticias> = MutableLiveData()
+    val categories : MutableLiveData<Noticias> = MutableLiveData()
     val interactor = NoticiasInteractor()
 
-    fun onBtnTraerNoticias(){
+    fun btnGetCategory(category : String, language: String){
         CoroutineScope(Dispatchers.IO).launch {
-            noticias.postValue(interactor.traerRespuesta("es"))
+            categories.postValue(interactor.traerNoticiasCat(category, language))
         }
     }
-
-    /*
-    fun onBuscarKeyword(keyword: String){
-        CoroutineScope(Dispatchers.IO).launch {
-            noticias.postValue(interactor.traerKeyword(keyword))
-        }
-    }
-
-     */
 }

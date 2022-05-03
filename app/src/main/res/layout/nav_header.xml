@@ -10,10 +10,10 @@
 
     <com.airbnb.lottie.LottieAnimationView
         android:id="@+id/lottie1"
-        android:layout_width="300dp"
-        android:layout_height="100dp"
+        android:layout_width="350dp"
+        android:layout_height="150dp"
         android:layout_gravity="center"
-        app:lottie_fileName="noti.json"
+        app:lottie_fileName="breaking.json"
         app:lottie_autoPlay="true"
         app:lottie_loop="true"
         app:lottie_speed="1"/>

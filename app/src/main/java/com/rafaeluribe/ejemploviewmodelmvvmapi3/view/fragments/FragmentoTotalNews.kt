@@ -1,4 +1,4 @@
-package com.rafaeluribe.ejemploviewmodelmvvmapi3.view.fragmentos
+package com.rafaeluribe.ejemploviewmodelmvvmapi3.view.fragments
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -10,12 +10,9 @@ import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.rafaeluribe.ejemploviewmodelmvvmapi3.R
 import com.rafaeluribe.ejemploviewmodelmvvmapi3.databinding.FragmentTotalNewsBinding
 import com.rafaeluribe.ejemploviewmodelmvvmapi3.repository.recyclerview.NoticiasAdaptador
-import com.rafaeluribe.ejemploviewmodelmvvmapi3.view.activities.VistaDetalleNoticias
-import com.rafaeluribe.ejemploviewmodelmvvmapi3.viewmodel.FragTotalNewsViewModel
-import com.rafaeluribe.ejemploviewmodelmvvmapi3.viewmodel.MainViewModel
+import com.rafaeluribe.ejemploviewmodelmvvmapi3.viewmodel.fragments.TotalNewsViewModel
 
 
 class FragmentoTotalNews : Fragment(), SearchView.OnQueryTextListener{
@@ -24,7 +21,7 @@ class FragmentoTotalNews : Fragment(), SearchView.OnQueryTextListener{
     private lateinit var b : FragmentTotalNewsBinding
 
     //ViewModel
-    private lateinit var fragTotalNewsViewModel: FragTotalNewsViewModel
+    private lateinit var fragTotalNewsViewModel: TotalNewsViewModel
 
     //RecyclerView
     private lateinit var myRecyclerView: RecyclerView
@@ -37,12 +34,12 @@ class FragmentoTotalNews : Fragment(), SearchView.OnQueryTextListener{
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
 
         b = FragmentTotalNewsBinding.inflate(layoutInflater)
 
         //ViewModel
-        fragTotalNewsViewModel = ViewModelProvider(this).get(FragTotalNewsViewModel::class.java)
+        fragTotalNewsViewModel = ViewModelProvider(this)[TotalNewsViewModel::class.java]
         observar()
 
         //recycler
@@ -52,6 +49,11 @@ class FragmentoTotalNews : Fragment(), SearchView.OnQueryTextListener{
 
         b.progressBar.visibility = View.VISIBLE
         fragTotalNewsViewModel.onBtnTraerNoticias()
+
+        b.btnBuscarNoticia?.setOnClickListener {
+            //b.progressBar.visibility = View.VISIBLE
+            fragTotalNewsViewModel.onFindKeyword(b.textView.toString())
+        }
 
 
         return b.root

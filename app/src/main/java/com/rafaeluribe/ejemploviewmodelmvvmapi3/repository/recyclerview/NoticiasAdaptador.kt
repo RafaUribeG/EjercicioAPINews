@@ -49,7 +49,6 @@ class NoticiasAdaptador(var context: Context,
         Glide.with(context)
              .load(listaDatos[position].url)
              .error(R.drawable.noimage)
-             .override(200, 200)
              .into(holder.imagen)
 
         holder.itemView.setOnClickListener {

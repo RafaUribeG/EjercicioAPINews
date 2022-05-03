@@ -1,25 +1,61 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/nav_notiger"
+        android:title="Noticias Generales"
+        android:icon="@drawable/ic_ver"/>
+
     <group android:checkableBehavior="single">
         <item
-            android:id="@+id/nav_buscar"
-            android:title="Buscar Noticias"
-            android:icon="@drawable/ic_registro"
-            android:checked="true"/>
 
-        <item
-            android:id="@+id/nav_notiger"
-            android:title="Noticias Generales"
-            android:icon="@drawable/ic_ver"/>
-
-        <item
-            android:id="@+id/nav_categorias"
-            android:title="Categorías"
-            android:icon="@drawable/ic_categoria"/>
-
-        <item
-            android:id="@+id/nav_exit"
-            android:title="Cerrar sesión"
-            android:icon="@drawable/logout_3622"/>
+            android:title="Categorias">
+            <menu>
+                <item
+                    android:id="@+id/navDeportes"
+                    android:title="Deportes"
+                    android:icon="@drawable/sports"/>
+                <item
+                    android:id="@+id/navCiencias"
+                    android:title="Ciencias"
+                    android:icon="@drawable/ic_ciencia"/>
+                <item
+                    android:id="@+id/navNegocios"
+                    android:title="Negocios"
+                    android:icon="@drawable/ic_negocios"/>
+                <item
+                    android:id="@+id/navTecnologia"
+                    android:title="Tecnologia"
+                    android:icon="@drawable/ic_tecnologia"/>
+                <item
+                    android:id="@+id/navSalud"
+                    android:title="Salud"
+                    android:icon="@drawable/ic_salud"/>
+                <item
+                    android:id="@+id/navEntretenimiento"
+                    android:title="Entretenimiento"
+                    android:icon="@drawable/ic_entretenimiento"/>
+            </menu>
+        </item>
     </group>
+
+
+
+    <group android:checkableBehavior="single">
+        <item android:title="Sesión">
+            <menu>
+                <item
+                    android:id="@+id/nav_sobre"
+                    android:title="Sobre esta aplicación"
+                    android:icon="@drawable/ic_info">
+                </item>
+                <item
+                    android:id="@+id/nav_exit"
+                    android:title="Cerrar sesión"
+                    android:icon="@drawable/logout_3622"/>
+            </menu>
+        </item>
+    </group>
+
+
 </menu>

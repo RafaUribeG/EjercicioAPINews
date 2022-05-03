@@ -8,24 +8,22 @@ import retrofit2.Call
 
 class NoticiasInteractor {
 
-    fun traerRespuesta(language: String): Noticias?{
+    fun traerRespuesta(categoria: String): Noticias?{
         val llamada: NoticiasAPIService =
             RestEngine.getRestEngine().create(NoticiasAPIService::class.java)
-        val resultado: Call<Noticias> = llamada.obtenerNoticias(language)
+        val resultado: Call<Noticias> = llamada.obtenerNoticias(categoria)
         val p: Noticias? = resultado.execute().body()
 
         return p
     }
 
-    /*
-    fun traerKeyword(keyword: String): Noticias?{
-        val llamada: NoticiasAPIService =
-            RestEngine.getRestEngine().create(NoticiasAPIService::class.java)
-        val resultado: Call<Noticias> = llamada.buscarKeyword(keyword)
-        val p:Noticias? = resultado.execute().body()
+    fun traerNoticiasCat(categoria: String, language: String): Noticias?{
+        val llamada: NoticiasAPIService = RestEngine.getRestEngine().create(NoticiasAPIService::class.java)
+        val resultado: Call<Noticias> = llamada.obtenerNoticiasCat(categoria, language)
+        val p: Noticias? = resultado.execute().body()
 
         return p
     }
 
-     */
+
 }

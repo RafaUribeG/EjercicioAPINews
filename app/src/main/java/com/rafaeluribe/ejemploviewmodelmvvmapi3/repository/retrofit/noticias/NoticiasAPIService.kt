@@ -7,6 +7,19 @@ import retrofit2.http.Query
 
 interface NoticiasAPIService {
 
+
+        @GET("news?access_key=50e5ea75c7004e9a26afcf256d1dc590")
+        fun obtenerNoticias(@Query("categories") categoria: String): Call<Noticias>
+
+        @GET("news?access_key=50e5ea75c7004e9a26afcf256d1dc590")
+        fun obtenerNoticiasCat(@Query("categories") categoria: String,
+                               @Query("languages") language: String): Call<Noticias>
+
+        @GET("news?access_key=50e5ea75c7004e9a26afcf256d1dc590")
+        fun buscarPalabraClave(@Query("keywords") keywords: String): Call<Noticias>
+
+
+
         /*
         @Headers(
                 value = [
@@ -18,10 +31,6 @@ interface NoticiasAPIService {
         fun obtenerNoticias(@Query("language") language: String): Call<Noticias>
 
          */
-
-
-        @GET("news?access_key=50e5ea75c7004e9a26afcf256d1dc590")
-        fun obtenerNoticias(@Query("languages") language: String): Call<Noticias>
 
 
 }

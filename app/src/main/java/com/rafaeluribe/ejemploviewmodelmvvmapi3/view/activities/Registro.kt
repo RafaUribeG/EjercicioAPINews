@@ -6,18 +6,12 @@ import android.os.Bundle
 import android.widget.Toast
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
-import com.rafaeluribe.ejemploviewmodelmvvmapi3.R
 import com.rafaeluribe.ejemploviewmodelmvvmapi3.databinding.ActivityRegistroBinding
-import com.rafaeluribe.ejemploviewmodelmvvmapi3.repository.retrofit.usuarios.RestEngine
-import com.rafaeluribe.ejemploviewmodelmvvmapi3.repository.retrofit.usuarios.Usuario
-import com.rafaeluribe.ejemploviewmodelmvvmapi3.repository.retrofit.usuarios.UsuarioAPIService
 import com.rafaeluribe.ejemploviewmodelmvvmapi3.repository.retrofit.usuarios.UsuarioItem
-import com.rafaeluribe.ejemploviewmodelmvvmapi3.viewmodel.RegistroViewModel
+import com.rafaeluribe.ejemploviewmodelmvvmapi3.viewmodel.activities.RegistroViewModel
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.async
 import kotlinx.coroutines.launch
-import retrofit2.Call
 
 class Registro : AppCompatActivity() {
 

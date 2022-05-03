@@ -4,21 +4,31 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/Curso Android/Modulo4/Semana 4/EjemploViewModelMVVMAPI3/app/src/main/res/drawable-v24/ic_registro.xml" value="0.1555" />
+        <entry key="..\:/Curso Android/Modulo4/Semana 4/EjemploViewModelMVVMAPI3/app/src/main/res/drawable/ic_deportes.xml" value="0.1145" />
+        <entry key="..\:/Curso Android/Modulo4/Semana 4/EjemploViewModelMVVMAPI3/app/src/main/res/drawable/ic_entretenimiento.xml" value="0.1145" />
         <entry key="..\:/Curso Android/Modulo4/Semana 4/EjemploViewModelMVVMAPI3/app/src/main/res/font/comic_neue_light.xml" value="0.2546875" />
         <entry key="..\:/Curso Android/Modulo4/Semana 4/EjemploViewModelMVVMAPI3/app/src/main/res/font/convergence.xml" value="0.2546875" />
         <entry key="..\:/Curso Android/Modulo4/Semana 4/EjemploViewModelMVVMAPI3/app/src/main/res/font/overlock_sc.xml" value="0.2546875" />
-        <entry key="..\:/Curso Android/Modulo4/Semana 4/EjemploViewModelMVVMAPI3/app/src/main/res/layout-v28/fragment_total_news.xml" value="0.22447916666666667" />
+        <entry key="..\:/Curso Android/Modulo4/Semana 4/EjemploViewModelMVVMAPI3/app/src/main/res/layout-v28/fragment_total_news.xml" value="0.17407407407407408" />
         <entry key="..\:/Curso Android/Modulo4/Semana 4/EjemploViewModelMVVMAPI3/app/src/main/res/layout/activity_login.xml" value="0.221025641025641" />
         <entry key="..\:/Curso Android/Modulo4/Semana 4/EjemploViewModelMVVMAPI3/app/src/main/res/layout/activity_main.xml" value="0.22447916666666667" />
         <entry key="..\:/Curso Android/Modulo4/Semana 4/EjemploViewModelMVVMAPI3/app/src/main/res/layout/activity_registro.xml" value="0.21041666666666667" />
         <entry key="..\:/Curso Android/Modulo4/Semana 4/EjemploViewModelMVVMAPI3/app/src/main/res/layout/activity_splash_screen.xml" value="0.21481481481481482" />
         <entry key="..\:/Curso Android/Modulo4/Semana 4/EjemploViewModelMVVMAPI3/app/src/main/res/layout/activity_total_news.xml" value="0.22447916666666667" />
         <entry key="..\:/Curso Android/Modulo4/Semana 4/EjemploViewModelMVVMAPI3/app/src/main/res/layout/activity_vista_detalle_noticias.xml" value="0.22447916666666667" />
+        <entry key="..\:/Curso Android/Modulo4/Semana 4/EjemploViewModelMVVMAPI3/app/src/main/res/layout/fragment_frag_business.xml" value="0.16944444444444445" />
+        <entry key="..\:/Curso Android/Modulo4/Semana 4/EjemploViewModelMVVMAPI3/app/src/main/res/layout/fragment_frag_entertainment.xml" value="0.16944444444444445" />
+        <entry key="..\:/Curso Android/Modulo4/Semana 4/EjemploViewModelMVVMAPI3/app/src/main/res/layout/fragment_frag_health.xml" value="0.22447916666666667" />
+        <entry key="..\:/Curso Android/Modulo4/Semana 4/EjemploViewModelMVVMAPI3/app/src/main/res/layout/fragment_frag_science.xml" value="0.22447916666666667" />
+        <entry key="..\:/Curso Android/Modulo4/Semana 4/EjemploViewModelMVVMAPI3/app/src/main/res/layout/fragment_frag_sports.xml" value="0.22447916666666667" />
+        <entry key="..\:/Curso Android/Modulo4/Semana 4/EjemploViewModelMVVMAPI3/app/src/main/res/layout/fragment_frag_tec.xml" value="0.21041666666666667" />
         <entry key="..\:/Curso Android/Modulo4/Semana 4/EjemploViewModelMVVMAPI3/app/src/main/res/layout/fragment_total_news.xml" value="0.221025641025641" />
         <entry key="..\:/Curso Android/Modulo4/Semana 4/EjemploViewModelMVVMAPI3/app/src/main/res/layout/item_recycler.xml" value="0.22447916666666667" />
         <entry key="..\:/Curso Android/Modulo4/Semana 4/EjemploViewModelMVVMAPI3/app/src/main/res/layout/nav_header.xml" value="0.22447916666666667" />
         <entry key="..\:/Curso Android/Modulo4/Semana 4/EjemploViewModelMVVMAPI3/app/src/main/res/layout/toolbar.xml" value="0.22447916666666667" />
         <entry key="..\:/Curso Android/Modulo4/Semana 4/EjemploViewModelMVVMAPI3/app/src/main/res/menu/menu_items.xml" value="0.22447916666666667" />
+        <entry key="..\:/Curso Android/Modulo4/Semana 4/EjemploViewModelMVVMAPI3/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.1145" />
+        <entry key="..\:/Curso Android/Modulo4/Semana 4/EjemploViewModelMVVMAPI3/app/src/main/res/mipmap-anydpi-v26/ic_news.xml" value="0.1145" />
       </map>
     </option>
   </component>

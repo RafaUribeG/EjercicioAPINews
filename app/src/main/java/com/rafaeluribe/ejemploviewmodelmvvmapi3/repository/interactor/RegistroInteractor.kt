@@ -24,7 +24,6 @@ class RegistroInteractor {
     }
 
     fun agregarUsuario(x : Int, usuarioItem: UsuarioItem) {
-
             val llamada : UsuarioAPIService =
                 RestEngine.getRestEngine().create(UsuarioAPIService::class.java)
             val resultado : Call<UsuarioItem> = llamada.agregarUsuario(x,usuarioItem)

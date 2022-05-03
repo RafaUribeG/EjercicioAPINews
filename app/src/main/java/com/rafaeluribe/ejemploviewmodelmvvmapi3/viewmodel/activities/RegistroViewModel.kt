@@ -1,4 +1,4 @@
-package com.rafaeluribe.ejemploviewmodelmvvmapi3.viewmodel
+package com.rafaeluribe.ejemploviewmodelmvvmapi3.viewmodel.activities
 
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
@@ -18,7 +18,7 @@ class RegistroViewModel : ViewModel() {
      fun onBtnValidarUsuarioRegistro(usuarioItem: UsuarioItem){
         CoroutineScope(Dispatchers.IO).launch {
 
-            var x: Usuario? = registroInteractor.validarUsuario(usuarioItem.usuario)
+            val x: Usuario? = registroInteractor.validarUsuario(usuarioItem.usuario)
 
             if(x == null){
                 //var cant = registroInteractor.cantidadRegistros()
