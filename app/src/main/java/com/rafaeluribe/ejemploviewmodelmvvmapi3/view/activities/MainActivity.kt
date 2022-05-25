@@ -91,6 +91,7 @@ class MainActivity : AppCompatActivity() , NavigationView.OnNavigationItemSelect
             R.id.navTecnologia -> ft.replace(R.id.myFrame, FragTec()).commit()
             R.id.navSalud -> ft.replace(R.id.myFrame, FragHealth()).commit()
             R.id.navEntretenimiento -> ft.replace(R.id.myFrame, FragEntertainment()).commit()
+            R.id.nav_sobre -> ft.replace(R.id.myFrame, Fragcreditos()).commit()
             R.id.nav_exit -> {
                 val intent = Intent(this, Login::class.java)
                 startActivity(intent)

@@ -50,9 +50,9 @@ class FragmentoTotalNews : Fragment(), SearchView.OnQueryTextListener{
         b.progressBar.visibility = View.VISIBLE
         fragTotalNewsViewModel.onBtnTraerNoticias()
 
-        b.btnBuscarNoticia?.setOnClickListener {
-            //b.progressBar.visibility = View.VISIBLE
-            fragTotalNewsViewModel.onFindKeyword(b.textView.toString())
+        b.btnBuscarNoticia.setOnClickListener {
+            b.progressBar.visibility = View.VISIBLE
+            fragTotalNewsViewModel.onFindKeyword(b.textView.text.toString())
         }
 
 

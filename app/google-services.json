@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "781931345981",
+    "firebase_url": "https://usuarios-f24b2-default-rtdb.firebaseio.com",
+    "project_id": "usuarios-f24b2",
+    "storage_bucket": "usuarios-f24b2.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:781931345981:android:fbf661fb37246d3d7ad254",
+        "android_client_info": {
+          "package_name": "com.rafaeluribe.ejemploviewmodelmvvmapi3"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "781931345981-r105i0a25hv5nng1np4kr4u99bjgou65.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAWMRxQZ0vmXlLIulb_ULKtF-tZLX5JOwI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "781931345981-r105i0a25hv5nng1np4kr4u99bjgou65.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
